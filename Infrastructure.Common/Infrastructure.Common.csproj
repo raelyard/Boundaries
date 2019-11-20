@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Podcasting.Infrastructure.Common</AssemblyName>
+    <RootNamespace>Podcasting.Infrastructure.Common</RootNamespace>
   </PropertyGroup>
 
 </Project>

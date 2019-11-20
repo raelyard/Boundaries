@@ -3,6 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>Podcasting.Podcaster.Processor</AssemblyName>
+    <RootNamespace>Podcasting.Podcaster.Processor</RootNamespace>
   </PropertyGroup>
 
 </Project>
