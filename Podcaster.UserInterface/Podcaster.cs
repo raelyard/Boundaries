@@ -6,9 +6,16 @@ namespace Podcasting.Podcaster.UserInterface
 {
     public class Podcaster
     {
-        public async Task SendCreatePodcasterCommand(IEndpointInstance bus)
+        private readonly IEndpointInstance _bus;
+
+        public Podcaster(IEndpointInstance bus)
         {
-            await bus.Send<CreatePodcasterCommand>(command => {});
+            _bus = bus;
+        }
+        
+        public async Task Create(string name)
+        {
+            await _bus.Send<CreatePodcasterCommand>(command => {});
         }
     }
 }
