@@ -41,6 +41,12 @@ namespace Podcasting.UserInterface
                 case "podcaster":
                     await TakeAction(new Podcaster.UserInterface.Podcaster(bus), command, args);
                     break;
+                case "guest":
+                    await TakeAction(new Guest.UserInterface.Guest(bus), command, args);
+                    break;
+                case "episode":
+                    await TakeAction(new Episode.UserInterface.Episode(bus), command, args);
+                    break;
                 default:
                     throw new Exception($"{subdomain} is not a valid subdomain");
             }
@@ -48,7 +54,38 @@ namespace Podcasting.UserInterface
 
         private static async Task TakeAction(Podcaster.UserInterface.Podcaster podcaster, string command, string[] args)
         {
-           await podcaster.Create(args[0]);
+            switch(command)
+            {
+                case "create":
+                    await podcaster.Create(args[0]);
+                    break;
+                default:
+                    throw new Exception($"{command} is not a valid command for subdomain podcaster");
+            }
+        }
+
+        private static async Task TakeAction(Guest.UserInterface.Guest guest, string command, string[] args)
+        {
+            switch(command)
+            {
+                case "create":
+                    await guest.Create(args[0]);
+                    break;
+                default:
+                    throw new Exception($"{command} is not a valid command for subdomain guest1");
+            }
+        }
+
+        private static async Task TakeAction(Episode.UserInterface.Episode episode, string command, string[] args)
+        {
+            switch(command)
+            {
+                case "create":
+                    await episode.Create(args[0]);
+                    break;
+                default:
+                    throw new Exception($"{command} is not a valid command for subdomain episode");
+            }
         }
     }
 }

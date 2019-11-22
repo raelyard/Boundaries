@@ -4,6 +4,8 @@
     <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj" />
     <ProjectReference Include="..\Podcaster.UserInterface\Podcaster.UserInterface.csproj" />
     <ProjectReference Include="..\Public.Events\Public.Events.csproj" />
+    <ProjectReference Include="..\Episode.UserInterface\Episode.UserInterface.csproj" />
+    <ProjectReference Include="..\Guest.UserInterface\Guest.UserInterface.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

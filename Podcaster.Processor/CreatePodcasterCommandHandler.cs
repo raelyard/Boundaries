@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Logging;
 using Podcasting.Podcaster.Commands;
+using Podcasting.Public.Events.Podcaster;
 
 namespace Podcasting.Podcaster.Processor
 {
@@ -9,10 +10,10 @@ namespace Podcasting.Podcaster.Processor
     {
         private static readonly ILog Log = LogManager.GetLogger<CreatePodcasterCommandHandler>();
 
-        public Task Handle(CreatePodcasterCommand command, IMessageHandlerContext context)
+        public async Task Handle(CreatePodcasterCommand command, IMessageHandlerContext context)
         {
-            System.Console.WriteLine("Received CreatePodcasterCommand");
-            return Task.CompletedTask;
+            System.Console.WriteLine($"Received CreatePodcasterCommand with name {command.Name}");
+            await context.Publish<PodcasterCreatedEvent>(theEvent => { theEvent.Name = command.Name; });
         }
     }
 }

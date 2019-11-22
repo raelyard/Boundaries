@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Public.Events\Public.Events.csproj" />
     <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\Guest.Commands\Guest.Commands.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

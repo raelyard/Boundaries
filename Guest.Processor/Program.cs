@@ -1,12 +1,24 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Podcasting.Infrastructure.Common;
 
 namespace Guest.Processor
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var host = new Host();
+            Console.Title = host.EndpointName;
+
+            var tcs = new TaskCompletionSource<object>();
+            Console.CancelKeyPress += (sender, e) => { e.Cancel = true; tcs.SetResult(null); };
+
+            await host.Start();
+            await Console.Out.WriteLineAsync("Press Ctrl+C to exit...");
+
+            await tcs.Task;
+            await host.Stop();
         }
     }
 }
