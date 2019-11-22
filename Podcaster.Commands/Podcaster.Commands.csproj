@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Podcasting.Podcaster.Commands</AssemblyName>
+    <RootNamespace>Podcasting.Podcaster.Commands</RootNamespace>
+  </PropertyGroup>
+
+</Project>
