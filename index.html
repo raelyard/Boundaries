@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Good Boundaries</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -25,8 +25,113 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					#### Good Boundaries Make Good Neighbors
+
+					Dave Rael
+
+					[https://developeronfire.com](https://developeronfire.com)
+
+					![Where Image?](images/developeronfire.png)
+
+					dave@raelyard.com
+					https://github.com/raelyard/boundaries/
+				</section>
+				<section data-markdown>
+					#### Domain-Driven Design
+
+					![Blue Book](images/bluebook.png)
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						#### Why Domain-Driven?
+						
+						Collaboration <!-- .element: class="fragment" data-fragment-index="1" -->
+
+						Using Composition to address complexity in large systems <!-- .element: class="fragment" data-fragment-index="2" -->
+
+						“Not all of a large system will be well-designed.” –Eric Evans <!-- .element: class="fragment" data-fragment-index="3" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						#### What is Domain-Driven Design?
+
+						Focus on the core domain. <!-- .element: class="fragment" data-fragment-index="1" -->
+
+						Explore models in a creative collaboration of domain practitioners and software practitioners. <!-- .element: class="fragment" data-fragment-index="2" -->
+
+						Speak a ubiquitous language within an explicitly bounded context. <!-- .element: class="fragment" data-fragment-index="3" -->
+					</script>
+				</section>
+				<section data-markdown>
+					#### Contexts Are Bounded
+
+					![Fence](images/fence.jpg)
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						#### But How?
+
+						Separate components? <!-- .element: class="fragment" data-fragment-index="1" -->
+
+						Separate repositories? <!-- .element: class="fragment" data-fragment-index="2" -->
+
+						Service Oriented Architecture? <!-- .element: class="fragment" data-fragment-index="3" -->
+
+						Microservices? <!-- .element: class="fragment" data-fragment-index="4" -->
+					</script>
+				</section>
+				<section data-markdown>
+					#### Not Good Boundaries - One Database Schema to Rule Them All
+
+					![Ring](images/ring.jpg)
+				</section>
+				<section data-markdown>
+					#### Pain
+
+					![Pain](images/clubber.jpg)
+				</section>
+				<section data-markdown>
+					#### Distributed Monolith
+
+					![Monolith](images/monolith.jpg)
+				</section>
+				<section data-markdown>
+					#### Pain
+
+					![Pain](images/clubber.jpg)
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						#### Good Boundaries
+
+						No common functionality. <!-- .element: class="fragment" data-fragment-index="1" -->
+
+						No common data. <!-- .element: class="fragment" data-fragment-index="2" -->
+
+						No chain of "service" calls. <!-- .element: class="fragment" data-fragment-index="3" -->
+
+						Communication only via events. <!-- .element: class="fragment" data-fragment-index="4" -->
+					</script>
+				</section>
+				<section data-markdown>
+					#### Good Boundaries - Example
+
+					![States](images/states.jpg)
+				</section>
+				<section data-markdown>
+					#### Good Boundaries Make Good Neighbors
+
+					Dave Rael
+
+					[https://developeronfire.com](https://developeronfire.com)
+
+					![Where Image?](images/developeronfire.png)
+
+					dave@raelyard.com
+					https://github.com/raelyard/boundaries/
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +142,12 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				slideNumber: false,
+				controls: false,
+				hash: true,
+				overview: false,
+				defaultTiming: 90,
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
