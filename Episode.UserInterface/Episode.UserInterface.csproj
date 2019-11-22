@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Podcasting.Episode.UserInterface</AssemblyName>
+    <RootNamespace>Podcasting.Episode.UserInterface</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nservicebus" Version="7.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Episode.Commands\Episode.Commands.csproj" />
+  </ItemGroup>
+
+</Project>
