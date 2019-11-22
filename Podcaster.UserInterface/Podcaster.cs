@@ -13,9 +13,13 @@ namespace Podcasting.Podcaster.UserInterface
             _bus = bus;
         }
 
-        public async Task Create(string name)
+        public async Task Create(string username, string name)
         {
-            await _bus.Send<CreatePodcasterCommand>(command => { command.Name = name; });
+            await _bus.Send<CreatePodcasterCommand>(command =>
+            {
+                command.Username = username;
+                command.Name = name;
+            });
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Podcasting.UserInterface
             switch(command)
             {
                 case "create":
-                    await podcaster.Create(args[0]);
+                    await podcaster.Create(args[0], args[1]);
                     break;
                 default:
                     throw new Exception($"{command} is not a valid command for subdomain podcaster");
